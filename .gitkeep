@@ -1,3 +1,0 @@
-touch my-empty-dir/.gitkeep
-git add my-empty-dir/.gitkeep
-git commit -m "Adding my empty directory"
