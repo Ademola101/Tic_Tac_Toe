@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Project
 
-> A tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns, created with Ruby.
+> A tic-tac-toe game on the command line where two players can play against each other and the board is displayed in between turns. This Tic-Tac-toe game is implemented with Ruby programming language
 
 ## Built With
 
