@@ -15,6 +15,9 @@ current_player = players[rand(2)]
 b = Board.new(current_player)
 b.display()
 puts
-puts " Welcome to the board \n #{player_1} First Player is  and the Second Player is #{player_2}"
+puts " Welcome to the board \n #{player_1} will play as #{players[0]} and #{player_2} will play as #{players[1]}"
+puts "Let's start"
 
+system 'cls'
+system 'clear'
 
