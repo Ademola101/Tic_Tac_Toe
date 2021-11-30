@@ -24,15 +24,20 @@ system 'clear'
 b.display()
 
 puts "it's #{player_1}'s turn"
-puts "Please select an available cell from the board"
-
-input = gets.chomp()
-if input.nil? || !(input.to_i >= 1 && input.to_i < 10)
-    raise StandardError
+while true
+  puts "Please select an available cell from the board"
+  input = gets.chomp()
+  case input.to_i
+  when 10..100
+    next
+  when 1..9
     input
+    puts "currect #{input}"
+    break
+  else puts "Please select an available cell from the board from 9"
+  end
 end
 
-rescue StandardError
 
 puts "it's #{player_2}'s turn"
 puts "Please select an available cell from the board"
