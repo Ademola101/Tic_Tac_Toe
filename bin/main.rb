@@ -23,11 +23,11 @@ system 'cls'
 system 'clear'
 the_loop = 0..4
 the_loop.each do
-  b.display()
+  b.display
   puts "it's #{player1}'s turn"
   puts 'Please select an available cell from the board'
-  while true
-    input = gets.chomp()
+  loop do
+    input = gets.chomp
     case input.to_i
     when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
       next
@@ -45,7 +45,7 @@ the_loop.each do
   b.display
   puts "it's #{player2}'s turn"
   puts 'Please select an available cell from the board'
-  while true
+  loop do
     input = gets.chomp
     case input.to_i
     when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
