@@ -21,3 +21,4 @@ puts "Let's start"
 system 'cls'
 system 'clear'
 
+puts "it's #{player_1}'s turn"
