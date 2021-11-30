@@ -8,7 +8,7 @@
 
 ## Live demo
 
-[Live demo link]()
+[Live demo link](https://replit.com/@Ademola101/TicTacToe#bin/main.rb)
 
 ## Getting Started and Play the Game
 
