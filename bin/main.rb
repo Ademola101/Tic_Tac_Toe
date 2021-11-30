@@ -34,7 +34,7 @@ while true
     input
     puts "currect #{input}"
     break
-  else puts "Please select an available cell from the board from 9"
+  else puts "Please select an available cell from the board from the board"
   end
 end
 
