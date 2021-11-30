@@ -1,10 +1,10 @@
 require_relative '../lib/draw.rb'
 puts "Starting Tic Tac game"
 puts "Enter player 1 name"
-player_1 = gets.chomp()
+player_1 = gets.chomp().capitalize
 puts ""
 puts "Enter player 2 name"
-player_2 = gets.chomp()
+player_2 = gets.chomp().capitalize
 puts ""
 
 system 'cls'
@@ -24,21 +24,39 @@ system 'clear'
 b.display()
 
 puts "it's #{player_1}'s turn"
+puts "Please select an available cell from the board"
 while true
-  puts "Please select an available cell from the board"
-  input = gets.chomp()
+  input = gets.chomp().to_i
   case input.to_i
-  when 10..100
+  when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
     next
   when 1..9
     input
-    puts "currect #{input}"
+    puts " #{player_1} value valid"
     break
-  else puts "Please select an available cell from the board from 9"
+  else puts "invalid value, please select from the available cell only"
+  end
+end
+
+system 'cls'
+system 'clear'
+
+puts "it's #{player_2}'s turn"
+puts "Please select an available cell from the board"
+while true
+  input = gets.chomp().to_i
+  case input.to_i
+  when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
+    next
+  when 1..9
+    input
+    puts " #{player_2} value valid"
+    break
+  else puts "invalid value, please select from the available cell only"
   end
 end
 
 
-puts "it's #{player_2}'s turn"
-puts "Please select an available cell from the board"
+# puts "it's #{player_2}'s turn"
+# puts "Please select an available cell from the board"
 
