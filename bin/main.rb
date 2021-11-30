@@ -20,5 +20,20 @@ puts "Let's start"
 system 'cls'
 system 'clear'
 
-puts "it's #{player_1}'s turn"
+
 b.display()
+
+puts "it's #{player_1}'s turn"
+puts "Please select an available cell from the board"
+
+input = gets.chomp()
+if input.nil? || !(input.to_i >= 1 && input.to_i < 10)
+    raise StandardError
+    input
+end
+
+rescue StandardError
+
+puts "it's #{player_2}'s turn"
+puts "Please select an available cell from the board"
+
