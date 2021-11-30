@@ -10,9 +10,9 @@ class Board
 
   def display
     puts '+- - - - - -+'
-    for row in 0..BOARD_MAX_INDEX
+    (0..BOARD_MAX_INDEX).each do |row|
       print '| '
-      for col in 0..BOARD_MAX_INDEX
+      (0..BOARD_MAX_INDEX).each do |col|
         s = @board[row][col]
         if s == EMPTY_POSITION
           print col + (row * 3) + 1
