@@ -21,8 +21,8 @@ system 'cls'
 system 'clear'
 
 
-b.display()
-for i in 1..9
+for i in 0..4
+  b.display()
   puts "it's #{player_1}'s turn"
   puts "Please select an available cell from the board"
   while true
@@ -41,6 +41,7 @@ for i in 1..9
   system 'cls'
   system 'clear'
   
+  b.display()
   puts "it's #{player_2}'s turn"
   puts "Please select an available cell from the board"
   while true
@@ -55,5 +56,11 @@ for i in 1..9
     else puts "invalid value, please select from the available cell only"
     end
   end
+  system 'cls'
+  system 'clear'
 end
+
+puts "It's a tie for now"
+puts "till we work on logic"
+puts "thank you"
   
