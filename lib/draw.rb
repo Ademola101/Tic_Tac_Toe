@@ -26,13 +26,30 @@ class Board
   end
 
   def full_board
-    for row in 0..BOARD_MAX_INDEX
-      for col in 0..BOARD_MAX_INDEX
+    (0..BOARD_MAX_INDEX).each do |row|
+      (0..BOARD_MAX_INDEX).each do |col|
         if @board[row][col] == EMPTY_POSITION
           return false
         end
       end
     end
-    return true
+    true
+  end
+
+def winner
+  winner = winner_rows()
+  if winner
+  return winner
+  end
+  winner = winner_cols()
+  if winner
+  return winner
+  end
+   winner = winner_diagonals()
+   if winner
+   return winner
+   end
+   # No winners
+   return
   end
 end
