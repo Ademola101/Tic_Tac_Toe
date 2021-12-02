@@ -9,6 +9,7 @@ player2 = gets.chomp
 player2 = player2.capitalize
 puts ''
 
+sleep 1
 system 'cls'
 system 'clear'
 
@@ -19,6 +20,7 @@ puts
 puts "Welcome to the board \n #{player1} will play as #{players[0]} and #{player2} will play as #{players[1]}"
 puts "Let's start"
 
+sleep 2
 system 'cls'
 system 'clear'
 the_loop = 0..4
@@ -39,6 +41,7 @@ the_loop.each do
     end
   end
 
+  sleep 2
   system 'cls'
   system 'clear'
 
@@ -57,6 +60,8 @@ the_loop.each do
     else puts 'invalid value, please select from the available cell only'
     end
   end
+  
+  sleep 2
   system 'cls'
   system 'clear'
 end
