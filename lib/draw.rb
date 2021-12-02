@@ -24,4 +24,15 @@ class Board
       puts "\n+- - - - - -+"
     end
   end
+
+  def full_board
+    for row in 0..BOARD_MAX_INDEX
+      for col in 0..BOARD_MAX_INDEX
+        if @board[row][col] == EMPTY_POSITION
+          return false
+        end
+      end
+    end
+    return true
+  end
 end
