@@ -23,49 +23,60 @@ puts "Let's start"
 sleep 2
 system 'cls'
 system 'clear'
-the_loop = 0..4
-the_loop.each do
-  b.display
-  puts "it's #{player1}'s turn"
-  puts 'Please select an available cell from the board'
-  loop do
-    input = gets.chomp
-    case input.to_i
-    when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
-      next
-    when 1..9
-      input.to_i
-      puts " #{player1} value valid"
-      break
-    else puts 'invalid value, please select from the available cell only'
-    end
-  end
 
-  sleep 2
-  system 'cls'
-  system 'clear'
-
+while not b.board_full and not b.winner
+  b.ask_player_for_move(current_player)
+  current_player = b.get_next_turn
   b.display
-  puts "it's #{player2}'s turn"
-  puts 'Please select an available cell from the board'
-  loop do
-    input = gets.chomp
-    case input.to_i
-    when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
-      next
-    when 1..9
-      input.to_i
-      puts "#{player2} value valid"
-      break
-    else puts 'invalid value, please select from the available cell only'
-    end
-  end
-  
-  sleep 2
-  system 'cls'
-  system 'clear'
+  puts
 end
 
-puts "It's a tie for now"
-puts 'till we work on logic'
-puts 'thank you'
+if b.winner()
+  puts "Player #{b.get_next_turn} wins"
+else
+  puts "The game is Tie"
+puts "Game over"
+
+# the_loop = 0..4
+# the_loop.each do
+#   b.display
+#   puts "it's #{player1}'s turn"
+#   puts 'Please select an available cell from the board'
+#   loop do
+#     input = gets.chomp
+#     case input.to_i
+#     when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
+#       next
+#     when 1..9
+#       input.to_i
+#       puts " #{player1} value valid"
+#       break
+#     else puts 'invalid value, please select from the available cell only'
+#     end
+#   end
+
+#   system 'cls'
+#   system 'clear'
+
+#   b.display
+#   puts "it's #{player2}'s turn"
+#   puts 'Please select an available cell from the board'
+#   loop do
+#     input = gets.chomp
+#     case input.to_i
+#     when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
+#       next
+#     when 1..9
+#       input.to_i
+#       puts "#{player2} value valid"
+#       break
+#     else puts 'invalid value, please select from the available cell only'
+#     end
+#   end
+#   system 'cls'
+#   system 'clear'
+# end
+
+# puts "It's a tie for now"
+# puts 'till we work on logic'
+# puts 'thank you'
