@@ -39,16 +39,16 @@ class Board
 def winner
   winner = winner_rows()
   if winner
-  return winner
+    return winner
   end
   winner = winner_cols()
   if winner
-  return winner
+    return winner
   end
    winner = winner_diagonals()
-   if winner
-   return winner
-   end
+  if winner
+    return winner
+  end
    # No winners
    return
   end
