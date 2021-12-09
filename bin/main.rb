@@ -73,11 +73,15 @@ else
   puts "The game is Tie"
 
 puts "Game over"
+<<<<<<< HEAD
+end
+=======
 
 
 
 
 
+>>>>>>> b94652f105fb0f6e34614cf4b3c390bc2ca4d5c0
 # the_loop = 0..4
 
 # the_loop.each do
