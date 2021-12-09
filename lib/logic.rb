@@ -22,11 +22,8 @@ class Board
     (0..BOARD_MAX_INDEX).each do |row_index|
       first_symbol = @board[row_index][0]
       (0..BOARD_MAX_INDEX).each do |col_index|
-        if first_symbol != @board[row_index][col_index]
-          break
-        elsif col_index == BOARD_MAX_INDEX && first_symbol != EMPTY_POSITION
-          return first_symbol
-        end
+        break if first_symbol != @board[row_index][col_index]
+        return first_symbol if col_index == BOARD_MAX_INDEX && first_symbol != EMPTY_POSITION
       end
     end
     nil
@@ -36,11 +33,8 @@ class Board
     (0..BOARD_MAX_INDEX).each do |col_index|
       first_symbol = @board[0][col_index]
       (1..BOARD_MAX_INDEX).each do |row_index|
-        if first_symbol != @board[row_index][col_index]
-          break
-        elsif row_index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
-          return first_symbol
-        end
+        break if first_symbol != @board[row_index][col_index]
+        return first_symbol if row_index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
       end
     end
     nil
@@ -49,11 +43,8 @@ class Board
   def winner_diagonals
     first_symbol = @board[0][0]
     (1..BOARD_MAX_INDEX).each do |index|
-      if first_symbol != @board[index][index]
-        break
-      elsif index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
-        return first_symbol
-      end
+      break if first_symbol != @board[index][index]
+      return first_symbol if index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
     end
     first_symbol = @board[0][BOARD_MAX_INDEX]
     row_index = 0
@@ -61,11 +52,8 @@ class Board
     while row_index < BOARD_MAX_INDEX
       row_index += 1
       col_index -= 1
-      if first_symbol != @board[row_index][col_index]
-        break
-      elsif row_index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
-        return first_symbol
-      end
+      break if first_symbol != @board[row_index][col_index]
+      return first_symbol if row_index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
     end
     nil
   end
@@ -86,11 +74,9 @@ class Board
 
   def validate_position(row, col)
     if row <= @board.size and col <= @board.size
-      if @board[row][col] == EMPTY_POSITION
-        return true
-      else
-        puts 'That position is occupied.'
-      end
+      return true if @board[row][col] == EMPTY_POSITION
+
+      puts 'That position is occupied.'
     else
       puts 'Invalid position.'
     end
@@ -108,9 +94,10 @@ class Board
         @board[row][col] = current_player
         played = true
       end
+      sleep 1
     end
 
-    def get_next_turn
+    def collect_next_turn
       @current_player = if @current_player == 'X'
                           'O'
                         else
