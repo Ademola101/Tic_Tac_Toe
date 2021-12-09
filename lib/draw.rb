@@ -142,12 +142,6 @@ class Board
     return @current_player
   end
 
-  def ask_player_for_move(current_player)
-    if current_player == COMPUTER_PLAYER
-      computer_move(current_player)
-    else
-      human_move(current_player)
-    end
-  end
-
 end
+end
+
