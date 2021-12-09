@@ -52,5 +52,18 @@ class Board
    # No winners
    return
   end
-   
+
+  def winner_rows
+    for row_index in 0..BOARD_MAX_INDEX
+      first_symbol = @board[row_index][0]
+      for col_index in 0..BOARD_MAX_INDEX
+        if first_symbol != @board[row_index][col_index]
+          break
+        elsif col_index == BOARD_MAX_INDEX && first_symbol != EMPTY_POSITION
+          return first_symbol
+        end
+      end
+    end
+    return
+  end
 end
