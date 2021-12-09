@@ -36,7 +36,7 @@ if b.winner()
 else
   puts "The game is Tie"
 puts "Game over"
-
+end
 # the_loop = 0..4
 # the_loop.each do
 #   b.display
