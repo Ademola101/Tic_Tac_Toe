@@ -133,4 +133,21 @@ class Board
     return false
   end
 
+  def get_next_turn
+    if @current_player == 'X'
+      @current_player = 'O'
+    else
+      @current_player = 'X'
+    end
+    return @current_player
+  end
+
+  def ask_player_for_move(current_player)
+    if current_player == COMPUTER_PLAYER
+      computer_move(current_player)
+    else
+      human_move(current_player)
+    end
+  end
+
 end
