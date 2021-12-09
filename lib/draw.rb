@@ -120,4 +120,17 @@ class Board
     return
   end
   
+  def validate_position(row, col)
+    if row <= @board.size and col <= @board.size
+      if @board[row][col] == EMPTY_POS
+        return true
+      else
+        puts "That position is occupied."
+      end
+    else
+      puts "Invalid position."
+    end
+    return false
+  end
+
 end
