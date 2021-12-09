@@ -28,16 +28,13 @@ class Board
   def full_board
     (0..BOARD_MAX_INDEX).each do |row|
       (0..BOARD_MAX_INDEX).each do |col|
-        if @board[row][col] == EMPTY_POSITION
-          return false
-        end
+        return false if @board[row][col] == EMPTY_POSITION
       end
     end
     true
   end
 
   def winner
-  winner = winner_rows()
   if winner
     return winner
   end
@@ -48,11 +45,29 @@ class Board
    winner = winner_diagonals()
   if winner
     return winner
-  end
-   # No winners
-   return
+    winner = winner_rows
+
+    winner = winner_cols
+    return winner if winner
+
+    winner = winner_diagonals
+    return winner if winner
+
+    # No winners
+    nil
   end
 
+    played = false
+    until played
+      put " Player #{current_player}, where would you like to play ?"
+      move = gets.to_i - 1
+      col = move % @board.size
+      row = (move - col ) / @board.size
+      if validation_postion(row , col)
+        @board[row][col] = current_player
+        played = true
+    end
+  end
   def winner_rows
     for row_index in 0..BOARD_MAX_INDEX
       first_symbol = @board[row_index][0]
@@ -66,4 +81,6 @@ class Board
     end
     return
   end
+
+  
 end
