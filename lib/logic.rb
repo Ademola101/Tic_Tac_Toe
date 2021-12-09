@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
 require_relative '../lib/draw'
 class Board
   BOARD_MAX_INDEX = 2
@@ -107,3 +110,5 @@ class Board
     end
   end
 end
+
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
