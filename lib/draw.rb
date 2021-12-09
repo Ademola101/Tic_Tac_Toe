@@ -60,4 +60,5 @@ class Board
         played = true
     end
   end
+  
 end
