@@ -1,5 +1,5 @@
 require_relative '../lib/logic'
-class Draw < Board
+class Board
   def display
     puts '+- - - - - -+'
     (0..BOARD_MAX_INDEX).each do |row|

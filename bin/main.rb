@@ -8,7 +8,7 @@ def player_input(player)
   begin
     puts "Enter #{player} name :"
     input = gets.chomp
-    raise StandardError, "#{player} have not entered any name" if input.empty?
+    raise StandardError, "#{player} have not entered any name" if input.empty? || input == ''
   rescue StandardError => e
     puts e.message
     retry
@@ -32,7 +32,7 @@ players = %w[O X]
 
 current_player = players[rand(2)]
 
-b = Draw.new(current_player)
+b = Board.new(current_player)
 
 puts
 
