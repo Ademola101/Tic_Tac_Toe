@@ -21,6 +21,7 @@ end
 player1 = player_input('Player 1')
 player2 = player_input('Player 2')
 
+puts ''
 sleep 1
 
 system 'cls'
@@ -51,7 +52,7 @@ while !b.board_full and !b.winner
 
   b.ask_player_for_move(current_player)
 
-  current_player = b.get_next_turn
+  current_player = b.collect_next_turn
 
   b.display
 
