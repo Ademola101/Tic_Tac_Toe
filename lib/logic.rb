@@ -87,15 +87,24 @@ class Board
     played = false
     until played
       puts " Player #{current_player}, where would you like to play ?"
-      move = gets.to_i - 1
-      col = move % @board.size
-      row = (move - col) / @board.size
-      if validate_position(row, col)
-        @board[row][col] = current_player
-        played = true
+      begin
+        player_move = gets.chomp
+        player_move = Integer(player_move)
+      rescue ArgumentError
+        puts 'Your input is invalid, please enter an integer'
+        retry
+      else
+        move = player_move.to_i - 1
+        col = move % @board.size
+        row = (move - col) / @board.size
+        if validate_position(row, col)
+          @board[row][col] = current_player
+          played = true
+        end
+        sleep 1
       end
-      sleep 1
     end
+    
 
     def collect_next_turn
       @current_player = if @current_player == 'X'

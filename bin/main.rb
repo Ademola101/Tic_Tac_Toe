@@ -2,7 +2,7 @@ require_relative '../lib/draw'
 
 require_relative '../lib/logic'
 
-puts 'Starting Tic Tac game'
+puts 'Starting Tic Tac game.....'
 
 def player_input(player)
   begin
