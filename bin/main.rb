@@ -4,21 +4,22 @@ require_relative '../lib/logic'
 
 puts 'Starting Tic Tac game'
 
-puts 'Enter player 1 name'
+def player_input(player)
+  begin
+    puts "Enter #{player} name :"
+    input = gets.chomp
+    raise StandardError, "#{player} have not entered any name" if input.empty?
+  rescue StandardError => e
+    puts e.message
+    retry
+  else
+    player = input
+  end
+  player
+end
 
-player1 = gets.chomp
-
-player1 = player1.capitalize
-
-puts ''
-
-puts 'Enter player 2 name'
-
-player2 = gets.chomp
-
-player2 = player2.capitalize
-
-puts ''
+player1 = player_input('Player 1')
+player2 = player_input('Player 2')
 
 sleep 1
 
