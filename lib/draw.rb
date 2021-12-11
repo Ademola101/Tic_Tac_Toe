@@ -15,5 +15,5 @@ class Draw < Board
       end
       puts "\n+- - - - - -+"
     end
-  end   
+  end
 end
