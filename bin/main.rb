@@ -2,13 +2,14 @@ require_relative '../lib/draw'
 
 require_relative '../lib/logic'
 
-puts 'Starting Tic Tac game.....'
+puts 'Starting Tic Tac Toc Game.....'
 
 def player_input(player)
   begin
     puts "Enter #{player} name :"
-    input = gets.chomp
+    input = gets.chomp.capitalize
     raise StandardError, "#{player} have not entered any name" if input.empty? || input == ''
+    raise StandardError, "#{player} the name is invalid. Name should be at least three (3) letters." if input.length < 3
   rescue StandardError => e
     puts e.message
     retry
