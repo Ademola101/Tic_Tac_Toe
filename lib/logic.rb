@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Lint/NestedMethodDefinition
 
 require_relative '../lib/draw'
 class Board
@@ -118,4 +118,4 @@ class Board
   end
 end
 
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Lint/NestedMethodDefinition
