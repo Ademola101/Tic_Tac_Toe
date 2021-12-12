@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
 require_relative '../lib/draw'
 class Board
   BOARD_MAX_INDEX = 2
@@ -104,7 +106,6 @@ class Board
         sleep 1
       end
     end
-    
 
     def collect_next_turn
       @current_player = if @current_player == 'X'
@@ -116,3 +117,5 @@ class Board
     end
   end
 end
+
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity

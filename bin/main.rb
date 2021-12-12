@@ -62,7 +62,7 @@ end
 
 if b.winner
 
-  puts "Player #{b.get_next_turn} wins"
+  puts "Player #{b.collect_next_turn} wins"
 
 else
 
