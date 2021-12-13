@@ -10,7 +10,20 @@
 
 [Live demo link](https://replit.com/@Ademola101/TicTacToe-1#bin/main.rb)
 
-## Getting Started and Play the Game
+## Getting Started
+
+- The game can be started and played online by clicking on the [Live demo link](https://replit.com/@Ademola101/TicTacToe-1#bin/main.rb). Alternatively, the game can be played locally on the computer.
+
+## Getting the local copy of the game on PC:
+
+The following steps should be followed to get the game running locally on PC
+
+- Copy the [link of this repository](https://github.com/Ademola101/Tic_Tac_Toe)
+- Git clone the repository
+- Navigate to the folder of the cloned repository
+
+
+## Play the Game
 
 - In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row
 - The players should enter their names and the first player will play with X and the second with O.
