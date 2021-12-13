@@ -1,66 +1,74 @@
 require_relative '../lib/draw'
-puts 'Starting Tic Tac game'
-puts 'Enter player 1 name'
-player1 = gets.chomp
-player1 = player1.capitalize
+
+require_relative '../lib/logic'
+
+puts 'Starting Tic Tac Toc Game.....'
+
+def player_input(player)
+  begin
+    puts "Enter #{player} name :"
+    input = gets.chomp.capitalize
+    raise StandardError, "#{player} have not entered any name" if input.empty? || input == ''
+    raise StandardError, "#{player} the name is invalid. Name should be at least three (3) letters." if input.length < 3
+  rescue StandardError => e
+    puts e.message
+    retry
+  else
+    player = input
+  end
+  player
+end
+
+player1 = player_input('Player 1')
+player2 = player_input('Player 2')
+
 puts ''
-puts 'Enter player 2 name'
-player2 = gets.chomp
-player2 = player2.capitalize
-puts ''
+sleep 1
 
 system 'cls'
+
 system 'clear'
 
 players = %w[O X]
+
 current_player = players[rand(2)]
+
 b = Board.new(current_player)
+
 puts
+
 puts "Welcome to the board \n #{player1} will play as #{players[0]} and #{player2} will play as #{players[1]}"
+
 puts "Let's start"
 
+sleep 2
+
 system 'cls'
+
 system 'clear'
-the_loop = 0..4
-the_loop.each do
-  b.display
-  puts "it's #{player1}'s turn"
-  puts 'Please select an available cell from the board'
-  loop do
-    input = gets.chomp
-    case input.to_i
-    when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
-      next
-    when 1..9
-      input.to_i
-      puts " #{player1} value valid"
-      break
-    else puts 'invalid value, please select from the available cell only'
-    end
-  end
 
-  system 'cls'
-  system 'clear'
+b.display
+
+while !b.board_full and !b.winner
+
+  b.ask_player_for_move(current_player)
+
+  current_player = b.collect_next_turn
 
   b.display
-  puts "it's #{player2}'s turn"
-  puts 'Please select an available cell from the board'
-  loop do
-    input = gets.chomp
-    case input.to_i
-    when input.nil? || !(input.to_i >= 1 && input.to_i < 10)
-      next
-    when 1..9
-      input.to_i
-      puts "#{player2} value valid"
-      break
-    else puts 'invalid value, please select from the available cell only'
-    end
-  end
-  system 'cls'
-  system 'clear'
+
+  puts
+
 end
 
-puts "It's a tie for now"
-puts 'till we work on logic'
-puts 'thank you'
+if b.winner
+
+  puts "Player #{b.collect_next_turn} wins"
+
+else
+
+  puts 'The game is Tie'
+
+  puts 'Game over'
+
+end
