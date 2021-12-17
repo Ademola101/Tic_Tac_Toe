@@ -28,7 +28,7 @@ describe Board do
     end
       it 'should return not true if position is occupied' do
         board_check = Board.new('O')
-        if @board == '3'
+        if @board == '1'
             expect(board_check.validate_position(row, col)).not_to eql true
         end
     end
