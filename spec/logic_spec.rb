@@ -8,7 +8,7 @@ describe Board do
         expect(board_test.board_full).to eql false if @board == ''
       end
 
-      let(:board_test){ Board.new('X') }
+      let(:board_test) { Board.new('X') }
       it 'should return true if the board is not empty' do
         expect(board_test.board_full).to eql true if @board == 4
       end
