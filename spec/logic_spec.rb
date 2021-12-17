@@ -14,4 +14,17 @@ describe Board do
       end
     end
   end
+
+  describe '#validate_position' do
+    context 'checking if spots on the board are occupied' do
+      it 'should return true if position is not occupied' do
+        board_check = Board.new('O')
+        expect(board_check.validate_position(row, col)).to eql true if @board == ''
+      end
+      it 'should return not true if position is occupied' do
+        board_check = Board.new('O')
+        expect(board_check.validate_position(row, col)).not_to eql true if @board == '1'
+      end
+    end
+  end
 end
