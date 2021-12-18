@@ -1,16 +1,19 @@
 require_relative '../lib/logic'
-
 describe Board do
   describe '#board_full' do
     context 'check if the board is full or not' do
       let(:board_test) { Board.new('X') }
       it 'should return false if the board is empty' do
-        expect(board_test.board_full).to eql false if @board == ''
+        @board = Array.new(3) { Array.new(3) { '' } }
+        @board.flatten!
+        expect(board_test.board_full).to eql false if @board.all?(&:empty?)
       end
 
       let(:board_test) { Board.new('X') }
       it 'should return true if the board is not empty' do
-        expect(board_test.board_full).to eql true if @board == 4
+        @board = Array.new(3) { Array.new(3) { 5 } }
+        @board.flatten!
+        expect(board_test.board_full).to eql true if @board.all? { |num| num.nil?}
       end
     end
   end
