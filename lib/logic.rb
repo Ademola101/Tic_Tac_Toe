@@ -90,7 +90,7 @@ class Board
     until played
       puts " Player #{current_player}, where would you like to play ?"
       begin
-        player_move = gets.chomp
+        player_move = gets
         player_move = Integer(player_move)
       rescue ArgumentError
         puts 'Your input is invalid, please enter an integer'

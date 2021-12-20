@@ -13,7 +13,10 @@ describe Board do
       it 'should return true if the board is not empty' do
         @board = Array.new(3) { Array.new(3) { 5 } }
         @board.flatten!
-        expect(board_test.board_full).to eql true if @board.all? { |num| num.nil?}
+        expect(board_test.board_full).to eql true unless @board.any? { |num| num.is_a? Integer }
+      end
+      it 'add' do
+        expect(4)
       end
     end
   end
