@@ -13,7 +13,24 @@ describe Board do
       it 'should return true if the board is not empty' do
         @board = Array.new(3) { Array.new(3) { 5 } }
         @board.flatten!
-        expect(!board_test.board_full).to eql (@board.any? { |num| num.is_a? Integer })
+        expect(!board_test.board_full).to eql(@board.any? { |num| num.is_a? Integer })
+      end
+    end
+  end
+
+  describe '#winner' do
+    context 'checking if there is winner on the spot on the board' do
+      it 'should return true if winner_rows is true' do
+        winner_rows = Board.new('O')
+        expect(winner_rows == true).to eql true if winner_rows == true
+      end
+      it 'should return true if winner_cols is true' do
+        winner_cols = Board.new('O')
+        expect(winner_cols == true).to eql true if winner_cols == true
+      end
+      it 'should return true if winner_diagonals is true' do
+        winner_diagonals = Board.new('O')
+        expect(winner_diagonals == true).to eql true if winner_diagonals == true
       end
     end
   end

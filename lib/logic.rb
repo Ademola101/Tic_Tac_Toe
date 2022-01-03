@@ -58,7 +58,7 @@ class Board
       return first_symbol if row_index == BOARD_MAX_INDEX and first_symbol != EMPTY_POSITION
     end
     nil
-  end   
+  end
 
   def winner
     winner = winner_rows
