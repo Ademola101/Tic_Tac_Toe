@@ -30,4 +30,10 @@ describe Board do
       end
     end
   end
+
+  describe '#collect_next_turn' do
+    it 'it should plays the number is inserted' do
+      expect(@current_player == true).to eql true if @current_player == true
+    end
+  end
 end
