@@ -10,13 +10,25 @@
 
 [Live demo link](https://replit.com/@Ademola101/TicTacToe-1#bin/main.rb)
 
-## Getting Started and Play the Game
+## Getting Started
 
-- In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row
-- The players should enter their names and the first player will play with X and the second with O.
-- Players will take turns marking their spots on the board.
-- The first player who matches three spots in a horizontal, vertical, or diagonal row. is the winner.
-- When the spots on the board are all marked with no matches, then, the game ends in a draw.
+- The game can be started and played online by clicking on the [Live demo link](https://replit.com/@Ademola101/TicTacToe-1#bin/main.rb). Alternatively, the game can be played locally on the computer.
+
+## Getting the local copy of the game on PC:
+
+The following steps should be followed to get the game running locally on PC
+
+- Copy the [link of this repository](https://github.com/Ademola101/Tic_Tac_Toe)
+- Git clone the repository
+- Navigate to the folder of the cloned repository
+
+
+## How to Play the Game
+- After cloning the repo, the player should run ./bin/ruby main.rb in the terminal.
+- Players should enter their names after which they would be assigned roles "X" and "O" to play as respectively. 
+- Players will take turns taking up available spots on the board with the aim of getting three Xs or Os in a horizontal, vertical or diagonal row and at the same time, still trying to stop the other player from placing three Xs or Os.
+- The first player who marks three spots in a horizontal, vertical, or diagonal row is the winner.
+- When all spots on the board are all marked with no successful matches, then, it's a tie.
 
 ## Authors
 👤 **Author 1**
